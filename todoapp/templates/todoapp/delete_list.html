@@ -1,0 +1,16 @@
+
+{% extends 'todoapp/main.html' %}
+{% block content %}
+    <div class="header-bar">
+        <h1>Are you sure to delete {{ list.title }} list?</h1>
+    </div>
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <a href="{% url 'list' %}"><input class="button" type="submit" value="Cancel"></a>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input class="button" type="submit" value="Confirm Delete">
+            </form>
+        </div>
+    </div>
+{% endblock %}
